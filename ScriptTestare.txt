@@ -1,0 +1,149 @@
+-----------------------------------INTEROGARI------------------------------------
+
+
+
+--numarul total al animalelor adoptate
+select count(id_animal) "Animale adoptate" from animale where data_adoptiei is not null;
+
+
+--istoricul medical al animalelor neadoptate
+select d.nume, data, stare_sanatate, boala, tratament 
+from fisa_medicala f, animale a, detalii_animale d 
+where f.id_animal=a.id_animal and a.id_animal=d.id_animal and a.data_adoptiei is NULL 
+order by f.id_animal, data desc; 
+
+
+--cate animale de sex masculin au fost adoptate
+select count(a.id_animal) 
+from animale a, detalii_animale d 
+where a.id_animal=d.id_animal and data_adoptiei is not null and d.sex='M';
+
+--se afiseaza toti cainii de sex masculin care nu sunt inca adoptati
+select data_nasterii, data_aducerii, nume, talie, culoare
+from animale a, tipuri_animale t, detalii_animale d
+where a.id_animal=d.id_animal and a.id_tip=t.id_tip and t.id_tip=1 and d.sex='M' and data_adoptiei is null;
+
+
+
+--cate animale a adoptat fiecare client
+select nume, count(a.cnp) "Animale adoptate"
+from client c, animale a
+where a.cnp=c.cnp
+group by nume;
+
+
+
+--de cat timp sunt animalele neadoptate in centru si care este varsta lor
+
+select d.nume, trunc(months_between(sysdate,data_aducerii)/12)||' ani si '||(trunc(months_between(sysdate,data_aducerii))-trunc(months_between(sysdate,data_aducerii)/12)*12) || ' luni'  as "timpul in centru" , 
+trunc(months_between(sysdate,data_nasterii)/12)||' ani si '||(trunc(months_between(sysdate,data_nasterii))-trunc(months_between(sysdate,data_nasterii)/12)*12) || ' luni' "varsta"
+from animale a, detalii_animale d
+where a.id_animal=d.id_animal and data_adoptiei is null
+order by months_between(sysdate,data_aducerii) desc;
+
+
+
+--in cat timp au fost adoptate animelele si varsta lor de atunci
+
+select d.nume, trunc(months_between(data_adoptiei,data_aducerii)/12)||' ani si '||(trunc(months_between(data_adoptiei,data_aducerii))-trunc(months_between(data_adoptiei,data_aducerii)/12)*12) || ' luni'  as "timpul in centru" , 
+trunc(months_between(data_adoptiei,data_nasterii)/12)||' ani si '||(trunc(months_between(data_adoptiei,data_nasterii))-trunc(months_between(data_adoptiei,data_nasterii)/12)*12) || ' luni' "varsta"
+from animale a, detalii_animale d
+where a.id_animal=d.id_animal and data_adoptiei is not null
+order by months_between(sysdate,data_aducerii) desc;
+
+
+--cel mai batran animal din centru
+select nume,a.id_animal
+from animale a, detalii_animale d
+where a.id_animal=d.id_animal  and data_nasterii=( select min(data_nasterii)
+from animale where data_adoptiei is null);
+
+
+
+
+--sa se afiseze animalele adoptate de Pristanda amalia
+ 
+select d.nume
+from animale a, client c, detalii_animale d
+where a.cnp=c.cnp and a.id_animal=d.id_animal and lower(c.nume)='pristanda amalia';
+
+
+--sa se afiseze toti clientii care nu sunt din Iasi
+
+select nume 
+from client
+where instr(adresa,'Iasi')=0;
+
+
+--cate animale din fiecare categorie au fost adoptate
+
+select denumire_tip, (select count(id_animal) from animale where data_adoptiei is not null group by id_tip having t.id_tip=id_tip) "Animale adoptate"
+from tipuri_animale t;
+
+
+
+
+--de cate ori s-au imbolnavit animalele din centru 
+
+select (select nume from detalii_animale where id_animal=a.id_animal) "Nume" , (select count(id_animal) from fisa_medicala where stare_sanatate='bolnav' and id_animal=a.id_animal) "nr"
+from animale a
+where data_adoptiei is null
+
+
+
+--animalele care nu au fost bolnave si sunt neadoptate
+
+select id_animal
+from animale a
+where 'bolnav' not in (select stare_sanatate from fisa_medicala  where id_animal=a.id_animal) and data_adoptiei is null;
+
+
+--stergerea fiselor medicale ale animalelor adoptate
+delete from fisa_medicala
+where id_animal in (select id_animal from animale where data_adoptiei is not null);
+
+--Mutarea unui animal într-o alta cușcă goală corespunzătoare
+update Animale
+set id_cusca=23
+where id_animal=1;
+
+--Adaugati coloana data_deces în tabela Animale, de tip date
+Alter table animale
+Add(data_deces date);
+
+--------------------------------VALIDARI-------------------------------------
+
+
+--incerc sa mut un animal intr-o cusca deja ocupata
+
+
+update Animale
+set id_cusca=2
+where id_animal=1;
+
+
+--clientul nu are 18 ani
+insert into client values(6050919226797, 'Cucos Andreea', 'oras Iasi, strada: Pacurari, cod postal: 707280');
+
+--cnp ul este gresit
+insert into client values(0000000000000, 'Niculae Vasile', 'oras Botosani, strada: Florilor, cod postal: 225987');
+
+
+--incerc sa adopt un animal deja adoptat
+update Animale
+set data_adoptiei='25-AUG-2013',cnp=5891118226799
+where id_animal=8;
+
+--adresa nu contine 'oras', 'cod postal', 'strada'
+insert into client values(5011218226798, 'Niculae Vasile', 'Vaslui, strada: Ranceni, cod postal: 606281');
+
+--adresa nu contine 'strada'
+insert into client values(5011218226798, 'Niculae Vasile', 'oras: Vaslui,  Ranceni, cod postal: 606281');
+
+--adresa nu contine 'cod postal'
+insert into client values(5011218226798, 'Niculae Vasile', 'oras: Vaslui, strada: Ranceni, 606281');
+
+--incerc sa mut un papagal intr-o cusca necorespunzatoare(care nu este de 80x80cm)
+update Animale
+set id_cusca=19
+where id_animal=18;

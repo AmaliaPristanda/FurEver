@@ -1,0 +1,304 @@
+insert into client values(6000919226797, 'Pristanda Amalia', 'oras Iasi, strada: Pacurari, cod postal: 707280');
+insert into client values(6000919226798, 'Pristanda Maria', 'oras Iasi, strada: Pacurari, cod postal: 707281');
+insert into client values(6000919226799, 'Popescu Ion', 'oras Iasi, strada: Florilor, cod postal: 706281');
+insert into client values(6011218226799, 'Niculae Vasile', 'oras Vaslui, strada: Ranceni, cod postal: 606281');
+
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1.5x1.5m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1.5x1.5m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1.5x1.5m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1.5x1.5m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('1x1m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('1.5x1.5m');
+insert into cusca(dimensiuni) values ('2x2m');
+insert into cusca(dimensiuni) values ('80x80cm');
+insert into cusca(dimensiuni) values ('80x80cm');
+insert into cusca(dimensiuni) values ('80x80cm');
+insert into cusca(dimensiuni) values ('80x80cm');
+
+
+insert into tipuri_animale(denumire_tip) values ( 'caine');
+insert into tipuri_animale(denumire_tip) values ('pisica');
+insert into tipuri_animale(denumire_tip) values ( 'iepure');
+insert into tipuri_animale(denumire_tip) values ( 'chinchilla');
+insert into tipuri_animale(denumire_tip) values ('papagal');
+
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('22-JAN-2020', '21-JUN-2020', 1, 1);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('02-JAN-2020', '21-OCT-2021', 2, 2);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('17-MAR-2017', '18-SEP-2020', 3, 3);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('02-OCT-2018', '05-NOV-2019', 2, 4);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('21-FEB-2012', '30-SEP-2015', 1, 5);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('05-APR-2017', '04-AUG-2017', 1, 6);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('15-MAR-2016', '18-SEP-2018', 1, 7);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('12-OCT-2011', '05-JUL-2013', 1, 8);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('08-JAN-2010', '19-MAR-2017', 1, 9);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('19-SEP-2016', '21-OCT-2018', 1, 10);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('01-MAR-2020', '12-OCT-2021', 2, 11);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('03-OCT-2013', '13-NOV-2021', 2, 12);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('11-JAN-2019', '21-JUN-2020', 2, 13);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('23-FEB-2017', '19-OCT-2018', 2, 14);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('04-APR-2020', '02-SEP-2020', 3, 15);
+
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('10-DEC-2019', '17-APR-2021', 3, 16);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('10-DEC-2011', '17-APR-2021', 5, 26);
+insert into Animale(data_nasterii, data_aducerii, id_tip, id_cusca) values ('06-SEP-2019', '09-MAR-2021', 4, 27);
+
+
+
+
+
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (2,'M', 'Rex', 'mare', 'negru')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (6,'M', 'Noodles', 'mica', 'alb')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (3,'M', 'Kinder', 'mica', 'gri')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (4,'F', 'Hamsi', 'mica', 'negru')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare,rasa) values (1,'M', 'Fulger', 'medie', 'gri','pitbull')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare,rasa) values (5,'M', 'Jumbo', 'mare', 'auriu','labrador')
+;
+
+
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (7,'M', 'Aki', 'mica', 'crem')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (8,'F', 'Kim', 'medie', 'patat')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (9, 'F','Milo', 'medie', 'negru')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (10,'M', 'Dexter', 'mare', 'alb')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (11,'F', 'Bella', 'mica', 'calico')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (12,'F', 'Lady', 'mica', 'tortoiseshell')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare,rasa) values (13,'M', 'Tom', 'mica', 'gri','russian blue')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (14,'M', 'Alfica', 'mica', 'portocaliu')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (15,'M', 'Jerry', 'mica', 'negru')
+;
+
+insert into detalii_animale(id_animal,sex, nume, talie, culoare) values (16, 'F', 'Norisor', 'mica', 'alb')
+;
+
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (17,'F', 'Coco', 'mica', 'albastru')
+;
+
+insert into detalii_animale(id_animal, sex, nume, talie, culoare) values (18,'F', 'Cenusa', 'mica', 'gri')
+;
+
+
+
+
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (2,'25-OCT-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (3,'22-SEP-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (4,'10-NOV-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (4,'5-DEC-2020', 'bolnav', 'endoparaziți', 'deparazitare interna')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (4,'23-FEB-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (1,'25-JUN-2020', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (5,'02-OCT-2015', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (6,'10-AUG-2017', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (6,'11-APR-2018', 'bolnav', 'abces dentar', 'antibioterapia')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (6,'05-MAY-2018', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (6,'12-MAY-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (6,'02-SEP-2020', 'bolnav','boala Cushing','tratament medical')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (6,'20-NOV-2020', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (6,'17-OCT-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (7,'20-SEP-2018', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (7,'17-SEP-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (8,'06-JUL-2013', 'bolnav', 'botulism', 'medicamente antitoxine')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (8,'30-JUL-2013', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (8,'12-MAY-2014', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (9,'24-MAR-2017', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (9,'15-APR-2018', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (9,'15-APR-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (9,'5-DEC-2020', 'bolnav', 'endoparaziți', 'deparazitare interna')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (9,'23-FEB-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (10,'25-OCT-2018', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (10,'19-SEP-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (10,'02-NOV-2020', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (10,'07-DEC-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (11,'23-OCT-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (12,'15-NOV-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (13,'25-JUN-2020', 'bolnav','ectoparaziti','zgarda antipurici')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (13,'25-OCT-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (14,'22-OCT-2018', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (14,'20-AUG-2019', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (15,'10-SEP-2020', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (15,'08-SEP-2021', 'sanatos')
+;
+
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (16,'02-MAY-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (16,'20-APR-2021', 'bolnav','micoza','badijonarea cu tinctura de iod')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (1,'30-JUN-2021', 'sanatos')
+;
+
+
+insert into fisa_medicala(id_animal, data, stare_sanatate,boala,tratament) values (14,'20-MAY-2020', 'bolnav','guturai','antibiotice')
+;
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (14,'21-JUN-2020', 'sanatos')
+;
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (14,'15-JUN-2021', 'sanatos')
+;
+
+
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (18,'15-MAR-2021', 'sanatos')
+;
+
+insert into fisa_medicala(id_animal, data, stare_sanatate) values (17,'18-APR-2021', 'sanatos')
+;
+
+
+
+
+
+
+
+
+
+update animale
+set data_adoptiei='14-JUN-2021', cnp=6000919226797
+where id_animal=9;
+
+
+update animale
+set data_adoptiei='14-NOV-2015',cnp=6000919226798
+where id_animal=5;
+
+update Animale
+set data_adoptiei='26-NOV-2019',cnp=6000919226797
+where id_animal=7;
+
+update Animale
+set data_adoptiei='25-AUG-2013',cnp=6000919226799
+where id_animal=8;
+
+update Animale
+set data_adoptiei='26-SEP-2019',cnp=6011218226799
+where id_animal=6;
+
+update Animale
+set data_adoptiei='25-AUG-2021',cnp=6000919226799
+where id_animal=16;
+
+
+
